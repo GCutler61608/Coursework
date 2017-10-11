@@ -112,6 +112,10 @@ public class Main extends Application {
 
         boxOfButtons.getChildren().addAll(myButtons);
 
+
+
+        
+
         root.getChildren().add(boxOfButtons);*/
     }
 
