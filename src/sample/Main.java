@@ -32,8 +32,10 @@ public class Main extends Application {
 
         VBox leftPane = new VBox(20);
         Button leftButton1 = new Button("I am left.");
+        leftButton1.getStyleClass().add("funky_button");
         leftPane.getChildren().add(leftButton1);
         Button leftButton2 = new Button("I am left again.");
+        leftButton2.getStyleClass().add("funky_button");
         leftPane.getChildren().add(leftButton2);
         root.setLeft(leftPane);
         leftPane.setAlignment(Pos.CENTER);
@@ -41,8 +43,10 @@ public class Main extends Application {
 
         VBox rightPane = new VBox(20);
         Button rightButton1 = new Button("I am right.");
+        rightButton1.getStyleClass().add("funky_button");
         rightPane.getChildren().add(rightButton1);
         Button rightButton2 = new Button("I am right again.");
+        rightButton2.getStyleClass().add("funky_button");
         rightPane.getChildren().add(rightButton2);
         root.setRight(rightPane);
         rightPane.setAlignment(Pos.CENTER);
@@ -50,20 +54,25 @@ public class Main extends Application {
 
         VBox topPane = new VBox(20);
         Button topButton1 = new Button("I am top.");
+        topButton1.getStyleClass().add("funky_button");
         topPane.getChildren().add(topButton1);
         Button topButton2 = new Button("I am top again.");
+        topButton2.getStyleClass().add("funky_button");
         topPane.getChildren().add(topButton2);
         root.setTop(topPane);
         topPane.setAlignment(Pos.CENTER);
         BorderPane.setAlignment(topPane, Pos.TOP_CENTER);
 
-        VBox bottomPane = new VBox(20);
-        Button bottomButton1 = new Button("Backwards");
-        bottomPane.getChildren().add(bottomButton1);
-        Button bottomButton2 = new Button("Pause/Play");
-        bottomPane.getChildren().add(bottomButton2);
-        Button bottomButton3 = new Button("Forwards");
-        bottomPane.getChildren().add(bottomButton3);
+        HBox bottomPane = new HBox(20);
+        Button backwardsButton = new Button("Backwards");
+        backwardsButton.getStyleClass().add("funky_button");
+        bottomPane.getChildren().add(backwardsButton);
+        Button playPause = new Button("Pause/Play");
+        playPause.getStyleClass().add("funky_button");
+        bottomPane.getChildren().add(playPause);
+        Button forwardsButton = new Button("Forwards");
+        forwardsButton.getStyleClass().add("funky_button");
+        bottomPane.getChildren().add(forwardsButton);
         root.setBottom(bottomPane);
         bottomPane.setAlignment(Pos.CENTER);
         BorderPane.setAlignment(bottomPane, Pos.BOTTOM_CENTER);
@@ -114,7 +123,7 @@ public class Main extends Application {
 
 
 
-        
+
 
         root.getChildren().add(boxOfButtons);*/
     }
