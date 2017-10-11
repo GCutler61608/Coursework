@@ -97,8 +97,10 @@ public class Main extends Application {
         Button centerButton1 = new Button("I am centre.");
         centerButton1.setOnAction((ActionEvent ae) -> nothing(ae));
         centerPane.getChildren().add(centerButton1);
+
         Button centerButton2 = new Button("I am centre again.");
         centerPane.getChildren().add(centerButton2);
+
         root.setCenter(centerPane);
         centerPane.setAlignment(Pos.CENTER);
         BorderPane.setAlignment(centerPane, Pos.CENTER);
