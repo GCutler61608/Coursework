@@ -8,12 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Main extends Application {
 
@@ -28,7 +34,10 @@ public class Main extends Application {
         stage.setTitle("Hello World");
         stage.setScene(scene);
         scene.getStylesheets().add("stylesheet.css");
-        stage.show();
+
+        stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
+
+        stage.show(); //THIS IS WHEN THE STAGE IS LAUNCHED AHHHHHHHHHHHHHHHHH
 
         VBox leftPane = new VBox(20);
         Button leftButton1 = new Button("I am left.");
@@ -67,18 +76,26 @@ public class Main extends Application {
         Button backwardsButton = new Button("Backwards");
         backwardsButton.getStyleClass().add("funky_button");
         bottomPane.getChildren().add(backwardsButton);
-        Button playPause = new Button("Pause/Play");
+        Image playButtonImage = new Image("play-button.jpg");
+
+        Button playPause = new Button("Pause/Play", new ImageView(playButtonImage));
         playPause.getStyleClass().add("funky_button");
+        playPause.setOnAction((ActionEvent ae) -> nothing(ae));
         bottomPane.getChildren().add(playPause);
+
         Button forwardsButton = new Button("Forwards");
         forwardsButton.getStyleClass().add("funky_button");
+        forwardsButton.setOnAction((ActionEvent ae) -> nothing(ae));
+
+
         bottomPane.getChildren().add(forwardsButton);
         root.setBottom(bottomPane);
-        bottomPane.setAlignment(Pos.CENTER);
-        BorderPane.setAlignment(bottomPane, Pos.BOTTOM_CENTER);
+        bottomPane.setAlignment(Pos.CENTER_LEFT);
+        BorderPane.setAlignment(bottomPane, Pos.BASELINE_CENTER);
 
         VBox centerPane = new VBox(20);
         Button centerButton1 = new Button("I am centre.");
+        centerButton1.setOnAction((ActionEvent ae) -> nothing(ae));
         centerPane.getChildren().add(centerButton1);
         Button centerButton2 = new Button("I am centre again.");
         centerPane.getChildren().add(centerButton2);
@@ -95,7 +112,7 @@ public class Main extends Application {
 
         myButtons[1] = new Button("Button number two");
         myButtons[1].setPrefSize(200, 50);
-        myButtons[1].setOnAction((ActionEvent ae) -> onion(ae));
+        myButtons[1].setOnAction((ActionEvent ae) -> nothing(ae));
         myButtons[1].setStyle( "-fx-border-color: transparent;" +
                 "-fx-border-width: 0;" +
                 "-fx-background-radius: 0;" +
@@ -128,15 +145,31 @@ public class Main extends Application {
         root.getChildren().add(boxOfButtons);*/
     }
 
-    private void onion(ActionEvent ae) {
+    private void nothing(ActionEvent ae) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
+        alert.setTitle("ALERT ALEERRT");
         alert.setHeaderText(null);
-        alert.setContentText("Wow, you clicked the button with style!");
+        alert.setContentText("nothing year yet :))))))))))))");
         alert.showAndWait();
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+
+    public static void exitPrompt(WindowEvent we) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("alert alert alERT");
+        alert.setHeaderText("yuuuuuuuuuuuu SURe you wanna exit?");
+
+        Optional result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            System.exit(0);
+        } else {
+            we.consume();
+        }
+
     }
 }
