@@ -6,17 +6,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import sun.plugin2.util.ColorUtil;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -28,8 +33,7 @@ public class Main extends Application {
 
         BorderPane root = new BorderPane();
 
-
-        Scene scene = new Scene(root, 1024, 768);
+        Scene scene = new Scene(root, 1024, 768, Color.rgb(89, 89, 89));
 
         stage.setTitle("Hello World");
         stage.setScene(scene);
@@ -37,7 +41,7 @@ public class Main extends Application {
 
         stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
 
-        stage.show(); //THIS IS WHEN THE STAGE IS LAUNCHED AHHHHHHHHHHHHHHHHH
+        stage.show(); //THIS IS WHEN THE STAGE IS LAUNCHED
 
         VBox leftPane = new VBox(20);
         Button leftButton1 = new Button("I am left.");
@@ -95,6 +99,7 @@ public class Main extends Application {
 
         VBox centerPane = new VBox(20);
         Button centerButton1 = new Button("I am centre.");
+        centerButton1.getStyleClass().add("funky_button");
         centerButton1.setOnAction((ActionEvent ae) -> nothing(ae));
         centerPane.getChildren().add(centerButton1);
 
@@ -149,9 +154,9 @@ public class Main extends Application {
 
     private void nothing(ActionEvent ae) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("ALERT ALEERRT");
+        alert.setTitle("alertt");
         alert.setHeaderText(null);
-        alert.setContentText("nothing year yet :))))))))))))");
+        alert.setContentText("nothing hear yet :))");
         alert.showAndWait();
     }
 
@@ -163,8 +168,8 @@ public class Main extends Application {
     public static void exitPrompt(WindowEvent we) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("alert alert alERT");
-        alert.setHeaderText("yuuuuuuuuuuuu SURe you wanna exit?");
+        alert.setTitle("ok bye");
+        alert.setHeaderText("confirm to exit");
 
         Optional result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
