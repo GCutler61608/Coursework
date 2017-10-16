@@ -38,6 +38,8 @@ public class Main extends Application {
         stage.setTitle("Hello World");
         stage.setScene(scene);
         scene.getStylesheets().add("stylesheet.css");
+        scene.setFill(Color.rgb(89, 89, 89));
+
 
         stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
 

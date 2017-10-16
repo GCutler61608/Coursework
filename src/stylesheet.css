@@ -1,3 +1,7 @@
+.menu-bar {
+    -fx-background-color: derive(#FF1d1d,20%); // your color here
+}
+
 .funky_button {
     -fx-text-fill: purple;
     -fx-font-size: 16;
