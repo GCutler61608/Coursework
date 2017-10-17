@@ -49,6 +49,35 @@ public class Main extends Application {
 
         stage.show(); //THIS IS WHEN THE STAGE IS LAUNCHED
 
+
+        VBox boxOfButtons = new VBox(10);
+
+        Button[] myButtons = new Button[5];
+
+        myButtons[0] = new Button("Button number one");
+        myButtons[0].setPrefSize(200, 50);
+        myButtons[0].setOnAction((ActionEvent ae) -> nothing());
+
+        myButtons[1] = new Button("Button number two");
+        myButtons[1].setPrefSize(200, 50);
+        myButtons[1].setOnAction((ActionEvent ae) -> nothing());
+
+        myButtons[2] = new Button("Button number three");
+        myButtons[2].setPrefSize(200, 50);
+        myButtons[2].setOnAction((ActionEvent ae) -> nothing());
+
+        myButtons[3] = new Button("Button number four");
+        myButtons[3].setPrefSize(200, 50);
+        myButtons[3].setOnAction((ActionEvent ae) -> nothing());
+
+        myButtons[4] = new Button("Button number five");
+        myButtons[4].setPrefSize(200, 50);
+        myButtons[4].setOnAction((ActionEvent ae) -> nothing());
+
+        boxOfButtons.getChildren().addAll(myButtons);
+
+        root.getChildren().add(boxOfButtons);
+
     }
 
     private void nothing(ActionEvent ae) {
