@@ -16,11 +16,12 @@ import java.util.Optional;
 
 public class Main extends Application {
 
-
-
+    public static DatabaseConnection database;
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        database = new DatabaseConnection("Songs.db");
 
         BorderPane root = new BorderPane();
 
