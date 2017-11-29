@@ -43,24 +43,24 @@ public class Main extends Application {
         Button[] myButtons = new Button[5];
 
         myButtons[0] = new Button("Button number one");
-        myButtons[0].setPrefSize(200, 50);
-        myButtons[0].setOnAction((ActionEvent ae) -> nothing());
+        myButtons[0].setPrefSize(500, 50);
+        myButtons[0].setOnAction((ActionEvent ae) -> nothing(ae));
 
         myButtons[1] = new Button("Button number two");
-        myButtons[1].setPrefSize(200, 50);
-        myButtons[1].setOnAction((ActionEvent ae) -> nothing());
+        myButtons[1].setPrefSize(300, 50);
+        myButtons[1].setOnAction((ActionEvent ae) -> nothing(ae));
 
         myButtons[2] = new Button("Button number three");
-        myButtons[2].setPrefSize(200, 50);
-        myButtons[2].setOnAction((ActionEvent ae) -> nothing());
+        myButtons[2].setPrefSize(300, 50);
+        myButtons[2].setOnAction((ActionEvent ae) -> nothing(ae));
 
         myButtons[3] = new Button("Button number four");
         myButtons[3].setPrefSize(200, 50);
-        myButtons[3].setOnAction((ActionEvent ae) -> nothing());
+        myButtons[3].setOnAction((ActionEvent ae) -> nothing(ae));
 
         myButtons[4] = new Button("Button number five");
         myButtons[4].setPrefSize(200, 50);
-        myButtons[4].setOnAction((ActionEvent ae) -> nothing());
+        myButtons[4].setOnAction((ActionEvent ae) -> nothing(ae));
 
         boxOfButtons.getChildren().addAll(myButtons);
 
@@ -68,11 +68,11 @@ public class Main extends Application {
 
     }
 
-    private void nothing(ActionEvent ae) {
+    public void nothing(ActionEvent ae) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("alertt");
         alert.setHeaderText(null);
-        alert.setContentText("nothing hear yet :))");
+        alert.setContentText("nothing here yet :))");
         alert.showAndWait();
     }
 
