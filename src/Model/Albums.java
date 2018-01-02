@@ -10,7 +10,7 @@ public class Albums {
         this.id = id;
         this.artist_ID = artist_ID;
         this.art_blob = art_blob;
-    }
+    } //change
 
     public int getId() {
         return id;
