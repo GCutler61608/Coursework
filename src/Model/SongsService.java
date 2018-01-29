@@ -10,6 +10,7 @@ public class SongsService {
     }
 
     public static Console selectById(int id, DatabaseConnection database) {
+        return null;
     }
 
     public static void save(Console console, DatabaseConnection database) {

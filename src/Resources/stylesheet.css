@@ -1,7 +1,19 @@
-.funky_button {
-    -fx-text-fill: purple;
+.root{
+    -fx-font-size: 16;
+    -fx-font-family: "Arial Black";
+    -fx-base: rgb(117, 117, 117);
+    -fx-font-style: italic;
+    -fx-background-color:  rgb(89, 89, 89);
+
+
+
+}
+
+
+.button {
     -fx-font-size: 16;
     -fx-font-family: "Arial Black";
     -fx-padding: 10;
-    -fx-background-color: lime;
+    -fx-background-color: rgb(117, 117, 117);
+    -fx-text-fill: white;
 }

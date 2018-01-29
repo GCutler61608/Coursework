@@ -27,11 +27,11 @@ public class Main extends Application {
 
         BorderPane root = new BorderPane();
 
-        Scene scene = new Scene(root, 1024, 768);
+        Scene scene = new Scene(root, 1024, 768, Color.RED);
 
         stage.setTitle("hii");
         stage.setScene(scene);
-        scene.getStylesheets().add("stylesheet.css");
+        scene.getStylesheets().add("resources/stylesheet.css");
 
         stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
         stage.show(); //shows the scene
@@ -68,7 +68,7 @@ public class Main extends Application {
         bottomPane.getChildren().add(bottomButton1);
         Button bottomButton2 = new Button("I am bottom again.");
         bottomButton2.setOnAction((ActionEvent ae) -> openNewStage(root));;
-        bottomButton2.getStyleClass().add("funky_button");
+        bottomButton2.getStyleClass().add("bottom");
         bottomPane.getChildren().add(bottomButton2);
         root.setBottom(bottomPane);
         bottomPane.setAlignment(Pos.CENTER);
