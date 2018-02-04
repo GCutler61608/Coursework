@@ -17,6 +17,7 @@ import javafx.stage.WindowEvent;
 import java.util.Optional;
 
 public class Main extends Application {
+    private static ActionEvent ae;
 
     //public static DatabaseConnection database;
 
@@ -38,8 +39,10 @@ public class Main extends Application {
 
         VBox leftPane = new VBox(20);
         Button leftButton1 = new Button("I am left.");
+        leftButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         leftPane.getChildren().add(leftButton1);
         Button leftButton2 = new Button("I am left again.");
+        leftButton2.setOnAction((ActionEvent ae) -> doSomething(ae));
         leftPane.getChildren().add(leftButton2);
         root.setLeft(leftPane);
         leftPane.setAlignment(Pos.CENTER);
@@ -47,8 +50,10 @@ public class Main extends Application {
 
         VBox rightPane = new VBox(20);
         Button rightButton1 = new Button("I am right.");
+        rightButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         rightPane.getChildren().add(rightButton1);
         Button rightButton2 = new Button("I am right again.");
+        rightButton2.setOnAction((ActionEvent ae) -> doSomething(ae));
         rightPane.getChildren().add(rightButton2);
         root.setRight(rightPane);
         rightPane.setAlignment(Pos.CENTER);
@@ -56,8 +61,10 @@ public class Main extends Application {
 
         VBox topPane = new VBox(20);
         Button topButton1 = new Button("I am top.");
+        topButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         topPane.getChildren().add(topButton1);
         Button topButton2 = new Button("I am top again.");
+        topButton2.setOnAction((ActionEvent ae) -> doSomething(ae));
         topPane.getChildren().add(topButton2);
         root.setTop(topPane);
         topPane.setAlignment(Pos.CENTER);
@@ -65,6 +72,7 @@ public class Main extends Application {
 
         VBox bottomPane = new VBox(20);
         Button bottomButton1 = new Button("I am bottom.");
+        bottomButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         bottomPane.getChildren().add(bottomButton1);
         Button bottomButton2 = new Button("I am bottom again.");
         bottomButton2.setOnAction((ActionEvent ae) -> openNewStage(root));;
@@ -76,8 +84,10 @@ public class Main extends Application {
 
         VBox centerPane = new VBox(20);
         Button centerButton1 = new Button("I am centre.");
+        centerButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         centerPane.getChildren().add(centerButton1);
         Button centerButton2 = new Button("I am centre again.");
+        centerButton2.setOnAction((ActionEvent ae) -> doSomething(ae));
         centerPane.getChildren().add(centerButton2);
         root.setCenter(centerPane);
         centerPane.setAlignment(Pos.CENTER);
@@ -101,10 +111,6 @@ public class Main extends Application {
             exampleButton.setPrefSize(100, 100);
             tilePane.getChildren().add(exampleButton);
         }
-
-
-
-
     }
 
     public static void openNewStage(Pane parent) {
@@ -126,10 +132,11 @@ public class Main extends Application {
     }
 
     public static void doSomething(ActionEvent ae) {
+        Main.ae = ae;
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
-        alert.setContentText("Wow, you clicked the button with style!");
+        alert.setContentText("eh");
         alert.showAndWait();
     }
 
