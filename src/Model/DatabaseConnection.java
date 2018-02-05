@@ -11,12 +11,12 @@ public class DatabaseConnection {
 
         private Connection connection = null;
 
-        public DatabaseConnection(String dbFile)
+        public DatabaseConnection(String Songs)
         {
             try
             {
                 Class.forName("org.sqlite.JDBC");
-                connection = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
+                connection = DriverManager.getConnection("jdbc:sqlite:" + Songs);
                 System.out.println("Database connection successfully established.");
             }
             catch (ClassNotFoundException exception)

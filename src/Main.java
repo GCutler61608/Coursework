@@ -19,12 +19,12 @@ import java.util.Optional;
 public class Main extends Application {
     private static ActionEvent ae;
 
-    //public static DatabaseConnection database;
+    public static DatabaseConnection database;
 
     @Override
     public void start(Stage stage) throws Exception {
 
-        //database = new DatabaseConnection("Songs.db");
+        database = new DatabaseConnection("Songs.db");
 
         BorderPane root = new BorderPane();
 
@@ -75,7 +75,7 @@ public class Main extends Application {
         bottomButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         bottomPane.getChildren().add(bottomButton1);
         Button bottomButton2 = new Button("I am bottom again.");
-        bottomButton2.setOnAction((ActionEvent ae) -> openNewStage(root));;
+        bottomButton2.setOnAction((ActionEvent ae) -> openNewStage(root));
         bottomButton2.getStyleClass().add("bottom");
         bottomPane.getChildren().add(bottomButton2);
         root.setBottom(bottomPane);
