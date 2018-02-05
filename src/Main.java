@@ -30,7 +30,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root, 1024, 768, Color.RED);
 
-        stage.setTitle("hii");
+        stage.setTitle("Music Library");
         stage.setScene(scene);
         scene.getStylesheets().add("resources/stylesheet.css");
 

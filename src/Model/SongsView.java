@@ -12,7 +12,8 @@ public class SongsView {
     private int songDateAdded;
     public SongsView (int songID, int featureID, int songDateAdded, int albumID, int artistID, int songDuration, String songName) {
         this.songID = songID;
-        this.albumID = albumID
+        this.albumID = albumID;
+
         this.artistID = artistID;
         this.songDuration = songDuration;
         this.songDateAdded = songDateAdded;
