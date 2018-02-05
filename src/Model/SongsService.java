@@ -1,24 +1,38 @@
 package Model;
 
 import java.io.Console;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class SongsService {
 
 
-    public static void selectAll(List<Console> targetList, DatabaseConnection database) {
-    }
+    /*public static Song selectById(int id, DatabaseConnection database) {
 
-    public static Console selectById(int id, DatabaseConnection database) {
-        return null;
-    }
+        Song result = null;
 
-    public static void save(Console console, DatabaseConnection database) {
-    }    // insert & update
+        PreparedStatement statement = database.newStatement("SELECT songID, songName, albumID, songDuration, featureID, songDateAdded FROM Song WHERE songID = ?");
 
-    public static void deleteById(int id, DatabaseConnection database) {
-    }
+        try {
+            if (statement != null) {
 
+                statement.setInt(1,id);
+                ResultSet results = database.executeQuery(statement);
+
+                if (results != null) {
+                    result = new Song(results.getInt("songID"), results.getString("songName"), results.getString("albumID"), results.getString("featureID"), results.getString("songDateAdded"), results.getString("songDuration"));
+                }
+            }
+        } catch (SQLException resultsException) {
+            System.out.println("SELECTION ERROR: " + resultsException.getMessage());
+        }
+
+        return result;
+    }*/
 }
+
+
 
 

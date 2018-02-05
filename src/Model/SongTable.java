@@ -12,11 +12,11 @@ import javafx.scene.control.Button;
 
 import static Model.Main.doSomething;
 
-public class importStage {
+public class SongTable {
 
     static Pane parent;
 
-    public importStage(Pane theParent) {
+    public songTable(Pane theParent) {
 
         Stage stage = new Stage();
         parent = theParent;

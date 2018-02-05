@@ -74,8 +74,8 @@ public class Main extends Application {
         Button bottomButton1 = new Button("I am bottom.");
         bottomButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         bottomPane.getChildren().add(bottomButton1);
-        Button bottomButton2 = new Button("I am bottom again.");
-        bottomButton2.setOnAction((ActionEvent ae) -> openNewStage(root));
+        Button bottomButton2 = new Button("open import stage");
+        bottomButton2.setOnAction((ActionEvent ae) -> openImportStage(root));
         bottomButton2.getStyleClass().add("bottom");
         bottomPane.getChildren().add(bottomButton2);
         root.setBottom(bottomPane);
@@ -83,8 +83,8 @@ public class Main extends Application {
         BorderPane.setAlignment(bottomPane, Pos.BOTTOM_CENTER);
 
         VBox centerPane = new VBox(20);
-        Button centerButton1 = new Button("I am centre.");
-        centerButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
+        Button centerButton1 = new Button("open song table.");
+        centerButton1.setOnAction((ActionEvent ae) -> openSongTable(root));
         centerPane.getChildren().add(centerButton1);
         Button centerButton2 = new Button("I am centre again.");
         centerButton2.setOnAction((ActionEvent ae) -> doSomething(ae));
@@ -113,8 +113,12 @@ public class Main extends Application {
         }
     }
 
-    public static void openNewStage(Pane parent) {
+    public static void openImportStage(Pane parent) {
         importStage newStage = new importStage(parent);
+    }
+
+    public static void openSongTable(Pane parent) {
+        songTable newStage = new songTable(parent);
     }
 
 

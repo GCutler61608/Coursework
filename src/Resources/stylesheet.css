@@ -7,7 +7,7 @@
 }
 
 .playbutton {
-    background-image: url("Resources/play-button.jpg");
+    background-image: src("Resources/play-button.jpg");
 }
 
 .button {
