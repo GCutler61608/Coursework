@@ -1,14 +1,14 @@
 package Model;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -34,10 +34,34 @@ public class Main extends Application {
         stage.setScene(scene);
         scene.getStylesheets().add("resources/stylesheet.css");
 
+
         stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
         stage.show(); //shows the scene
 
-        VBox leftPane = new VBox(20);
+
+        ObservableList<SongsView> song = FXCollections.observableArrayList(
+                new SongsView("Duck SONG", "2/01/2011"),
+                new SongsView("Isabella", "23/12/2019")
+        );
+
+        TableView table = new TableView<>();
+        table.setPrefSize(400, 300);
+        table.setItems(song);
+
+        TableColumn songNameColumn = new TableColumn<>("Song Name");
+        songNameColumn.setCellValueFactory(new PropertyValueFactory<>("songName"));
+        table.getColumns().add(songNameColumn);
+
+        TableColumn songDateAddedColumn = new TableColumn<>("Date Added");
+        songDateAddedColumn.setCellValueFactory(new PropertyValueFactory<>("songDateAdded"));
+        table.getColumns().add(songDateAddedColumn);
+
+        root.getChildren().add(table);
+
+
+
+
+        /*VBox leftPane = new VBox(20);
         Button leftButton1 = new Button("I am left.");
         leftButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         leftPane.getChildren().add(leftButton1);
@@ -68,9 +92,9 @@ public class Main extends Application {
         topPane.getChildren().add(topButton2);
         root.setTop(topPane);
         topPane.setAlignment(Pos.CENTER);
-        BorderPane.setAlignment(topPane, Pos.TOP_CENTER);
+        BorderPane.setAlignment(topPane, Pos.TOP_CENTER);*/
 
-        VBox bottomPane = new VBox(20);
+        /*VBox bottomPane = new VBox(20);
         Button bottomButton1 = new Button("I am bottom.");
         bottomButton1.setOnAction((ActionEvent ae) -> doSomething(ae));
         bottomPane.getChildren().add(bottomButton1);
@@ -80,9 +104,9 @@ public class Main extends Application {
         bottomPane.getChildren().add(bottomButton2);
         root.setBottom(bottomPane);
         bottomPane.setAlignment(Pos.CENTER);
-        BorderPane.setAlignment(bottomPane, Pos.BOTTOM_CENTER);
+        BorderPane.setAlignment(bottomPane, Pos.BOTTOM_CENTER);*/
 
-        VBox centerPane = new VBox(20);
+        /*VBox centerPane = new VBox(20);
         Button centerButton1 = new Button("open song table.");
         centerButton1.setOnAction((ActionEvent ae) -> openSongTable(root));
         centerPane.getChildren().add(centerButton1);
@@ -91,35 +115,20 @@ public class Main extends Application {
         centerPane.getChildren().add(centerButton2);
         root.setCenter(centerPane);
         centerPane.setAlignment(Pos.CENTER);
-        BorderPane.setAlignment(centerPane, Pos.CENTER);
+        BorderPane.setAlignment(centerPane, Pos.CENTER);*/
 
 
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setFitToWidth(true);
-        root.getChildren().add(scrollPane);
 
-        TilePane tilePane = new TilePane();
-        tilePane.prefWidthProperty().bind(root.widthProperty());
-        tilePane.prefHeightProperty().bind(root.heightProperty());
-        tilePane.setHgap(10);
-        tilePane.setVgap(10);
-        tilePane.setPadding(new Insets(20));
-        scrollPane.setContent(tilePane);
 
-        for (int i = 1; i <= 256; i++) {
-            Button exampleButton = new Button(Integer.toString(i));
-            exampleButton.setPrefSize(100, 100);
-            tilePane.getChildren().add(exampleButton);
-        }
     }
 
     public static void openImportStage(Pane parent) {
         importStage newStage = new importStage(parent);
     }
 
-    public static void openSongTable(Pane parent) {
+    /*public static void openSongTable(Pane parent) {
         songTable newStage = new songTable(parent);
-    }
+    }*/
 
 
     public static void main(String[] args) {

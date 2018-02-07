@@ -4,12 +4,14 @@ public class Albums {
 
     private int albumID;
     private int artistID;
+    private String albumName;
     private String albumArtBlob;
 
-    public Albums(int albumID, int artistID, String albumArtBlob) {
+    public Albums(int albumID, int artistID, String albumArtBlob, String albumName) {
         this.albumID = albumID;
         this.artistID = artistID;
         this.albumArtBlob = albumArtBlob;
+        this.albumName = albumName;
     }
 
     public int getAlbumID() {
@@ -26,6 +28,14 @@ public class Albums {
 
     public void setArtistID(int artistID) {
         this.artistID = artistID;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
 
     public String getAlbumArtBlob() {

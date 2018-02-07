@@ -3,30 +3,22 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class SongsView {
 
-    private int songID;
-    private int albumID;
-    private int artistID;
-    private int songDuration;
-    private SimpleStringProperty songName;
-    private int featureID;
-    private int songDateAdded;
-    public SongsView (int songID, int featureID, int songDateAdded, int albumID, int artistID, int songDuration, String songName) {
-        this.songID = songID;
-        this.albumID = albumID;
+    private final SimpleStringProperty songName;
+    private final SimpleStringProperty songDateAdded;
+    //private final int songDuration;
 
-        this.artistID = artistID;
-        this.songDuration = songDuration;
-        this.songDateAdded = songDateAdded;
-        this.featureID = featureID;
+    public SongsView (String songName, String songDateAdded) {
         this.songName = new SimpleStringProperty(songName);
+        this.songDateAdded = new SimpleStringProperty(songDateAdded);
+       // this.songDuration =  new songDuration;
     }
 
-    public int getSongID() { return songID; }
-    public int getAlbumID() { return albumID; }
-    public int getArtistID() { return artistID; }
-    public int getSongDuration() { return songDuration; }
     public String getSongName() { return songName.get(); }
-    public SimpleStringProperty songNameProperty() { return songName; }
-    public int getFeatureID() { return featureID; }
-    public int getSongDateAdded() { return songDateAdded; }
+    public void setSongName(String songName) { this.songName.set(songName); }
+
+    public String getSongDateAdded() { return songDateAdded.get(); }
+    public void setSongDateAdded(String songDateAdded) { this.songDateAdded.set(songDateAdded); }
+
+    /*public int getSongDuration() { return songDuration.get(); }
+    public void setSongDuration(int songDuration) { this.songDuration = songDuration; }*/
 }
