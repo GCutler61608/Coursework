@@ -26,9 +26,11 @@ public class Main extends Application {
 
         database = new DatabaseConnection("Songs.db");
 
-        BorderPane root = new BorderPane();
+      //  BorderPane root = new BorderPane();
+        TableView table = new TableView<>();
 
-        Scene scene = new Scene(root, 1024, 768, Color.RED);
+
+        Scene scene = new Scene(table, 1024, 768, Color.RED);
         stage.setTitle("Music Library");
         stage.setScene(scene);
         scene.getStylesheets().add("resources/stylesheet.css");
@@ -44,7 +46,7 @@ public class Main extends Application {
                 new SongsView("help", "23/12/2019")
         );
 
-        TableView table = new TableView<>();
+       // TableView table = new TableView<>();
         table.setPrefSize(400, 300);
         table.setItems(song);
 
@@ -56,7 +58,7 @@ public class Main extends Application {
         songDateAddedColumn.setCellValueFactory(new PropertyValueFactory<>("songDateAdded"));
         table.getColumns().add(songDateAddedColumn);
 
-        root.getChildren().add(table);
+   //     root.getChildren().add(table);
 
 
         stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
