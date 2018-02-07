@@ -29,19 +29,19 @@ public class Main extends Application {
         BorderPane root = new BorderPane();
 
         Scene scene = new Scene(root, 1024, 768, Color.RED);
-
         stage.setTitle("Music Library");
         stage.setScene(scene);
         scene.getStylesheets().add("resources/stylesheet.css");
 
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setFitToWidth(true);
 
-        stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
-        stage.show(); //shows the scene
+
 
 
         ObservableList<SongsView> song = FXCollections.observableArrayList(
                 new SongsView("Duck SONG", "2/01/2011"),
-                new SongsView("Isabella", "23/12/2019")
+                new SongsView("help", "23/12/2019")
         );
 
         TableView table = new TableView<>();
@@ -59,6 +59,8 @@ public class Main extends Application {
         root.getChildren().add(table);
 
 
+        stage.setOnCloseRequest((WindowEvent we) -> exitPrompt(we));
+        stage.show(); //shows the scene
 
 
         /*VBox leftPane = new VBox(20);
