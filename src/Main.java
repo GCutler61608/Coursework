@@ -46,7 +46,7 @@ public class Main extends Application {
                 new SongsView("help", "23/12/2019")
         );
 
-       // TableView table = new TableView<>();
+        //TableView root = new TableView<>();
         table.setPrefSize(400, 300);
         table.setItems(song);
 
